@@ -20,7 +20,7 @@
           class="song"
           :key="song.id">
           <v-layout>
-            <v-flux xs6>
+            <v-flex xs6>
               <div class="song-title">
                 {{song.title}}
               </div>
@@ -40,10 +40,10 @@
                 })">
                 View
               </v-btn>
-            </v-flux>
-            <v-flux xs6>
+            </v-flex>
+            <v-flex xs6>
               <img class="album-image" :src="song.albumImageUrl" />
-            </v-flux>
+            </v-flex>
           </v-layout>
         </div>
       </panel>

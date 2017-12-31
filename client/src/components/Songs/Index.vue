@@ -1,0 +1,39 @@
+<template>
+<div>
+  <v-layout column>
+    <v-flex xs6 offset-xs3>
+      <songs-search-panel class="mb-2" />
+      <songs-panel />
+    </v-flex>
+  </v-layout>
+</div>
+</template>
+
+<script>
+import SongsPanel from './SongsPanel'
+import SongsSearchPanel from './SongsSearchPanel'
+import SongsService from '@/services/SongsService'
+
+export default {
+  components: {
+    SongsPanel,
+    SongsSearchPanel
+  },
+  data () {
+    return {
+      songs: null
+    }
+  },
+  methods: {
+    navigateTo (route) {
+      this.$router.push(route)
+    }
+  },
+  async mounted () {
+    this.songs = (await SongsService.index()).data
+  }
+}
+</script>
+
+<style scoped>
+</style>
